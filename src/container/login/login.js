@@ -3,13 +3,7 @@ import Logo from '../../component/logo/logo'
 import {List, InputItem, WingBlank, WhiteSpace, Button} from 'antd-mobile'
 import { connect } from 'react-redux'
 import {Redirect} from 'react-router-dom'
-import {login} from '../../redux/user.redux'
 
-
-@connect(
-	state=>state.user,
-	{login}
-)
 class Login extends React.Component{
 	constructor(props) {
 		super(props)
