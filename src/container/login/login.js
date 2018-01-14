@@ -12,7 +12,6 @@ class Login extends React.Component{
 			pwd:''
 		}
 		this.register = this.register.bind(this)
-		this.handleLogin = this.handleLogin.bind(this)
 	}
 	register(){
 		this.props.history.push('/register')
