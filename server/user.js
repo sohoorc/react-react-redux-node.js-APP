@@ -48,7 +48,6 @@ Router.get('/info',function(req, res){
 	if (!userid) {
 		return res.json({code:1})
 	}
-	
 	User.findOne({_id:userid} ,_filter , function(err,doc){
 		if (err) {
 			return res.json({code:1, msg:'后端出错了'})
@@ -57,8 +56,6 @@ Router.get('/info',function(req, res){
 			return res.json({code:0,data:doc})
 		}
 	})
-	// 用户有没有cookie
-	
 })
 
 function md5Pwd(pwd){
