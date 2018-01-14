@@ -14,7 +14,7 @@ class Register extends React.Component{
 		super(props)
 		this.state = {
 			user:'',
-			pwd:'',
+			pwd:'', 
 			repeatpwd:'',
 			type:'genius' // 或者boss
 		}
