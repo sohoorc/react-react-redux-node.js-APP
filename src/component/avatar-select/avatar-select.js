@@ -12,6 +12,7 @@ class AvatarSelector extends Component {
     this.state = {
       icon: ''
     };
+    
     this.avatarList = 'boy,bull,chick,crab,girl,hedgehog,hippopotamus,koala,lemur,man,pig,tiger,whale,woman,zebra'.split(',')
       .map(v => ({
         icon: require(`./../img/${v}.png`),
