@@ -16,14 +16,15 @@ Router.get('/list',function(req, res){
 Router.post('/login',function(req,res){
 	const {user,pwd} = req.body
 	// find接收的第一个参数为需要查询的项，第二个参数为返回结果中需要过滤的项
-	User.find({user,'pwd':md5Pwd(pwd)},{pwd:0,__v:0},function(err,doc){
-		if(!doc.length){
+	User.findOne({user,'pwd':md5Pwd(pwd)},{pwd:0,__v:0},function(err,doc){
+		if(!doc){
 			return res.json({code:1,msg:"用户名或密码有误！"})
 		}
-		res.cookie('userid',doc[0]._id)
+		res.cookie('userid',doc._id)
 		return res.json({code:0,data:doc})
 	})
 })
+
 
 Router.post('/register', function(req, res){
 	const {user, pwd, type} = req.body
@@ -37,7 +38,7 @@ Router.post('/register', function(req, res){
 			if (e) {
 				return res.json({code:1,msg:'后端出错了'})
 			}
-			const {user, type, _id} = d[0]
+			const {user, type, _id} = d
 			res.cookie('userid', _id)
 			return res.json({code:0,data:{user, type, _id}})
 		})
