@@ -30,14 +30,14 @@ class DashBoard extends Component {
         icon: 'boss',
         title: '牛人列表',
         component: Boss,
-        hide: user.type == 'genius'
+        hide: user.type === 'genius'
       }, {
         path: '/genius',
         text: 'boss',
         icon: 'job',
         title: 'BOSS列表',
         component: Genius,
-        hide: user.type == 'boss'
+        hide: user.type === 'boss'
       }, {
         path: '/msg',
         text: '消息',
@@ -57,7 +57,7 @@ class DashBoard extends Component {
     return (
       <div>
         <NavBar className="fixd-header" mode="dark">
-          {navList.find((item) => { return item.path == pathname }).title}
+          {navList.find((item) => { return item.path === pathname }).title}
         </NavBar>
         <WhiteSpace></WhiteSpace>
         <div>

@@ -25,7 +25,7 @@ class AvatarSelector extends Component {
       ? (
         <div>
           <span>已选择头像</span>
-          <img src={this.state.icon} style={{ width: 20 }} />
+          <img src={this.state.icon} alt={'头像'} style={{ width: 20 }} />
         </div>
       ) : '请选择头像'
     return (
@@ -41,7 +41,6 @@ class AvatarSelector extends Component {
             }}
           ></Grid>
         </List>
-
       </div>
     );
   }
