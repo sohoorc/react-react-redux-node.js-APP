@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { connent, connect } from 'react-redux';
+import { connect } from 'react-redux';
 import { NavBar, WhiteSpace } from 'antd-mobile'
 
 import Boss from './../../component/boss/boss'
