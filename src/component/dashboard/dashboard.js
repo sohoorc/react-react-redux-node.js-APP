@@ -8,7 +8,7 @@ import Genius from './../../component/genius/genius'
 import Msg from './../../component/msg/msg'
 import User from './../../component/user/user'
 
-import NavLink from './../navlink/navlink'
+import NavLinkBar from './../navlink/navlink'
 
 // function Msg(){
 //   return <h1>msg</h1>
@@ -56,7 +56,7 @@ class DashBoard extends Component {
 
     return (
       <div>
-        <NavBar className="fixd-header" mode="dark">
+        <NavBar className="fixd-header" mode="dard">
           {navList.find((item) => { return item.path === pathname }).title}
         </NavBar>
         <WhiteSpace></WhiteSpace>
@@ -69,7 +69,7 @@ class DashBoard extends Component {
         </div>
 
         {/* <Route path='/genius' component={Genius}></Route> */}
-        <NavLink data={navList}></NavLink>
+        <NavLinkBar data={navList}></NavLinkBar>
       </div>
     );
   }

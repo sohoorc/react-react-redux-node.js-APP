@@ -3,6 +3,7 @@ import { getRedirectPath } from '../util'
 const AUTH_SUCCESS = "AUTH_SUCCESS"
 const ERROR_MSG = 'ERROR_MSG'
 const LOAD_DATA = 'LOAD_DATA'
+const LOG_OUT = 'LOG_OUT'
 const initState = {
   redirectTo: '',
   isAuth: false,
@@ -24,6 +25,11 @@ export function user(state = initState, action) {
       return {
         ...state,
         ...action.payload
+      }
+    case LOG_OUT:
+      return {
+        ...initState,
+        redirectTo:'/login'
       }
     case ERROR_MSG:
       return {
@@ -98,4 +104,8 @@ export function update(data) {
         }
       })
   }
+}
+
+export function logOutSubmit(){
+  return {type:LOG_OUT}
 }
