@@ -55,7 +55,7 @@ Router.post('/update', function(req, res){
 	User.findByIdAndUpdate(userid,body,function(err,doc){
 		const data = Object.assign({},{
 			user:doc.user,
-			type:doc.type
+			type:doc.type,
 		},body)
 		return res.json({code:0,data})
 	})

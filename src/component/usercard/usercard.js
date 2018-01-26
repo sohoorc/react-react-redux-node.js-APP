@@ -24,9 +24,11 @@ class UserCard extends Component {
                   extra={<span>{v.title}</span>}
                 />
                 <Body>
-                  {v.desc.split('\n').map((v) => {
-                    return <p key={v + Math.random()}>{v}</p>
+                  {v.type=='boss'?<div>公司:{v.company}</div>:null}
+                  {v.desc.split('\n').map((item) => {
+                    return <p key={item + Math.random()}>{item}</p>
                   })}
+                  {v.type =='boss'?<div>薪资{v.salary}</div>:null}
                 </Body>
               </Card>
               : null

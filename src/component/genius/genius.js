@@ -11,7 +11,7 @@ const Body = Card.Body
 @connect(state => state, { getUserList })
 class Genius extends Component {
   componentDidMount() {
-    this.props.getUserList('genius')
+    this.props.getUserList('boss')
   }
 
   render() {
