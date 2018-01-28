@@ -53,7 +53,7 @@ class User extends Component {
         </List>
       </div>
     )
-      : <Redirect to={'/login'}></Redirect>;
+      : <Redirect to={props.redirectTo}></Redirect>;
   }
 }
 
