@@ -4,6 +4,7 @@ const utils = require('utility') // MD5
 const Router = express.Router()
 const model = require('./model')
 const User = model.getModel('user')
+const Chat = model.getModel('chat')
 const _filter = {'pwd':0,'__v':0}
 
 Router.get('/list',function(req, res){
@@ -72,6 +73,15 @@ Router.get('/info',function(req, res){
 		}
 		if (doc) {
 			return res.json({code:0,data:doc})
+		}
+	})
+})
+
+Router.get('/getmsglist',function(req,res){
+	const user = req.cookies.user
+	Chat.find({'$or':[{from:user,to:user}]},function(err,doc){
+		if(!err){
+			return res.json({code:0,msgs:doc})
 		}
 	})
 })
