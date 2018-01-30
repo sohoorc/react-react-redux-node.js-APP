@@ -38,3 +38,37 @@
 	left: 0;
 	right: 0;
 }
+
+.chat-container{
+	height: 646px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.chat-item{
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+	box-sizing: border-box;
+}
+
+.chat-item .chat-content{
+	max-width: 200px;
+	display: inline-block;
+	vertical-align: middle;
+	word-wrap:break-word;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.chat-item.chat-receive .chat-content{
+	background-color: bisque;
+} 
+
+.chat-item.chat-send{
+	text-align: right;
+}
+
+.chat-item.chat-send .chat-content{
+	background-color:rgba(109, 226, 99, 0.952);
+} 

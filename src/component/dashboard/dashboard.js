@@ -10,16 +10,21 @@ import User from './../../component/user/user'
 
 import NavLinkBar from './../navlink/navlink'
 
-// function Msg(){
-//   return <h1>msg</h1>
-// }
+import { getMsgList, sendMsg, recvMsg } from './../../redux/chat.redux'
 
-// function User(){
-//   return <h1>User</h1>
-// }
-
-@connect(state => state)
+@connect(
+  state => state,
+  {getMsgList,recvMsg}
+)
 class DashBoard extends Component {
+  componentDidMount() {
+    if(!this.props.chat.chatmsg.length){
+      this.props.getMsgList()
+      this.props.recvMsg()
+    }
+  }
+  
+
   render() {
     const pathname = this.props.location.pathname
     const user = this.props.user
@@ -52,8 +57,6 @@ class DashBoard extends Component {
         component: User,
       }
     ]
-
-
     return (
       <div>
         <NavBar className="fixd-header" mode="dard">

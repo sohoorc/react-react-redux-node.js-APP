@@ -12,8 +12,9 @@ class UserCard extends Component {
   }
 
   handleClick(v){
-    console.log(v)
-    this.props.history.push(`/chat/${v._id}`)
+    let userInfo = {id:v._id,user:v.user}
+      userInfo = JSON.stringify(userInfo)
+    this.props.history.push(`/chat/${userInfo}`)
   }
 
   render() {

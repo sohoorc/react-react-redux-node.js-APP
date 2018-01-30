@@ -11,11 +11,11 @@ const Body = Card.Body
 @connect(state => state, { getUserList })
 class Boss extends Component {
   componentDidMount() {
-    this.props.getUserList('genius')
+    this.props.getUserList('genius')  
   }
 
   render() {
-    return <UserCard userlist ={this.props.chatuser.userlist}></UserCard>;
+    return <UserCard  userlist ={this.props.chatuser.userlist}></UserCard>;
   }
 }
 
