@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
+@connect(
+  state=>state
+)
 class Msg extends Component {
   constructor(props) {
     super(props);
-    this.clickA = this.clickA.bind(this)
-  }
-  
-  clickA(){
-    alert(1)
   }
 
   render() {
+    const msgGroup = {}
+    this.props.chat.chatmsg.forEach(v=>{
+      msgGroup[v.chatid] = msgGroup[v.chatid] || []
+      msgGroup[v.chatid].push(v)
+    })
+
+    const chatList = Object.values(msgGroup)
+    console.log(chatList)
     return (
-      <div onClick={this.clickA}>
+      <div>
         MSG
       </div>
     );
