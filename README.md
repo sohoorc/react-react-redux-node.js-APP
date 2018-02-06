@@ -1,2 +1,3 @@
-# react-react-redux-node.js-APP
-react/react-redux/node.js全栈练习项目
+## react react-redux nodejs mongodb前后端练习项目
+　　项目为慕课上的教学项目，用来练习nodejs和mongodb。
+
